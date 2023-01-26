@@ -1,0 +1,34 @@
+{% extends 'Panel/Pages/media/main.html' %}
+{% load static %}
+{% load tags %}
+
+{% block head %}
+    <title>Media - Images - {{ img.name }}</title>
+    <link rel="stylesheet" href="{% static 'Panel/css/media.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="media-page">
+        <div class="image-show">
+            <img src="{% images img.path %}" alt="{{ img.name }}">
+        </div>
+    </div>
+{% endblock %}
+
+{% block path %}
+    {{ block.super }}
+    <a href="{% url 'Panel:media-images' %}?path={{ img.parent }}">IMAGES</a>
+    <a href="{% url 'Panel:media-show-image' %}?path={{ img.path }}">{{ img.name|upper }}</a>
+{% endblock %}
+
+{% block topbar %}
+    <div class="topbar-tools">
+        <div class="links">
+            <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+            <a href="#"><i class="fa-solid fa-trash"></i></a>
+            <a href="{% images img.path %}" download><i class="fa-solid fa-download"></i></a>
+            <a href="{% url 'Panel:media-copy' type="image" %}?path={{ img.path }}"><i class="fa-solid fa-copy"></i></a>
+            <a href="{% url 'Panel:media-cut' type="image" %}?path={{ img.path }}"><i class="fa-solid fa-scissors"></i></a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'Panel/panel.html' %}
+{% load static %}
+
+
+{% block head %}
+    <title>Media</title>
+    <link rel="stylesheet" href="{% static 'Panel/css/media.css' %}">
+{% endblock %}
+
+{% block main %}
+
+{% endblock %}
+
+{% block topbar %}
+    <div class="topbar-tools">
+        <div class="links">
+            <a href="{% url 'Panel:media-images' %}">IMAGES</a>
+            <a href="{% url 'Panel:media-videos' %}">VIDEOS</a>
+            <a href="{% url 'Panel:media-audios' %}">AUDIOS</a>
+        </div>
+        <div class="folders">
+            <a href="?p={{ up }}"><i class="fa-solid fa-chevron-up"></i></a>
+            {% for folder in folders %}
+                <a href="?path={{ folder.path }}"><i class="fa-solid fa-folder"></i> {{ folder.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block path %}
+    <a href="{% url 'Panel:media' %}">MEDIA</a>
+{% endblock %}

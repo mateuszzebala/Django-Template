@@ -1,0 +1,57 @@
+{% extends 'Panel/panel.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'Main/css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'Panel/css/home.css' %}">
+    {{ block.super }}
+{% endblock %}
+
+{% block main %}
+
+    <div class="home">
+    <div class="settings_state">
+            <div class="top">MACHINE</div>
+            <div class="value"><h1>{{ machine }}</h1></div>
+        </div>
+    <div class="settings_state">
+            <div class="top">SYSTEM</div>
+            <div class="value"><h1>{{ system }}</h1></div>
+        </div>
+    <div class="settings_state">
+            <div class="top">SERVER NAME</div>
+            <div class="value"><h1>{{ server_name }}</h1></div>
+        </div>
+    <div class="settings_state">
+            <div class="top">PYTHON</div>
+            <div class="value"><h1>{{ python }}</h1></div>
+        </div>
+        <div class="settings_state">
+            <div class="top">DEBUG</div>
+            <div class="value"><h1>{{ debug }}</h1></div>
+        </div>
+
+        <div class="settings_state">
+            <div class="top">INSTALLED APPS</div>
+            <div class="value"><h1>{{ installed_apps }}</h1></div>
+        </div>
+        <div class="settings_state">
+            <div class="top">DB TYPE</div>
+            <div class="value"><h1>{{ db_type }}</h1></div>
+        </div>
+        <div class="settings_state">
+            <div class="top">TIME ZONE</div>
+            <div class="value"><h1>{{ time_zone }}</h1></div>
+        </div>
+        <div class="settings_state">
+            <div class="top">USERS</div>
+            <div class="value"><h1>{{ number_of_users }}</h1></div>
+        </div>
+
+    </div>
+{% endblock %}
+
+{% block path %}
+    <a href="{% url 'Panel:home' %}">HOME</a>
+{% endblock %}

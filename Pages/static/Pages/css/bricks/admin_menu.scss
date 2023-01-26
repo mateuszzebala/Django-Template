@@ -1,0 +1,83 @@
+$admin-menu-bg: #222;
+$admin-menu-font: #fff;
+
+$success-color: #3adb76;
+$alert-color: #cc4b37;
+$primary-color: #1779ba;
+$secondary-color: #767676;
+$warning-color: #ffae00;
+$font-family: 'Consolas', sans-serif;
+
+.admin-menu {
+    background-color: $admin-menu-bg;
+    display: flex;
+    z-index: 20;
+    width: max(100%, 900px);
+    overflow-x: auto;
+    justify-content: space-between;
+    font-family: $font-family;
+    align-items: center;
+    padding: 10px;
+    *{
+        margin: 0 !important;
+    }
+    .field{
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+    span, a, p {
+        color: $admin-menu-font;
+        font-family: $font-family;
+    }
+
+    a {
+        font-weight: bold;
+        text-decoration: none;
+        font-family: $font-family;
+    }
+
+    .switch, button {
+        margin: 0;
+    }
+
+    .switch{
+        input:checked + .slider{
+            background-color: $success-color !important;
+        }
+    }
+
+
+    button.edit-page-submit {
+        border-radius: 5px;
+        font-size: 20px;
+        padding: 10px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        padding: 0;
+    }
+
+    .user {
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0 20px;
+
+        img {
+            width: 30px;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+        }
+
+    }
+
+}
+
+
+@media(max-width: 475px){
+    .admin-menu .user{
+        display: none;
+    }
+}

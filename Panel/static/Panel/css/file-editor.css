@@ -1,0 +1,153 @@
+.file-editor-tools {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.file-editor-tools button, .file-editor-tools a {
+  color: var(--font-special);
+  font-size: 25px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.file-editor-tools button:hover, .file-editor-tools a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.code-editor {
+  background: var(--bg-color);
+  height: 100%;
+}
+.code-editor form {
+  height: 100%;
+}
+.code-editor textarea {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  width: 100%;
+  font-size: 20px;
+  height: 100%;
+  border: 0;
+  padding: 20px;
+}
+.code-editor textarea:focus {
+  outline: none;
+}
+.code-editor button {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 10;
+  background: var(--bg-special);
+  color: var(--font-special);
+  padding: 10px 30px;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.editor-file-tools {
+  gap: 30px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+.editor-file-tools button, .editor-file-tools a {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 17px;
+  color: var(--font-special);
+}
+
+.file-show {
+  padding: 30px;
+}
+.file-show video {
+  width: 50%;
+  min-width: 500px;
+  border-radius: 20px;
+}
+.file-show img {
+  width: 50%;
+  min-width: 500px;
+  border-radius: 20px;
+}
+
+.window_form {
+  position: fixed;
+  z-index: 500;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 60px;
+  border-radius: 10px;
+  display: flex;
+  min-width: 400px;
+  font-weight: bold;
+  flex-direction: column;
+  box-shadow: 0 0 10px var(--bg-special);
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 30px;
+  background-color: var(--bg-special);
+  color: var(--font-special);
+}
+.window_form input {
+  text-align: center;
+  border: 0;
+  background-color: var(--bg-color);
+  color: var(--font-special);
+  padding: 20px 20px;
+  font-size: 25px;
+  cursor: text;
+  border-radius: 5px;
+}
+.window_form input::file-selector-button {
+  display: none;
+}
+.window_form input:focus {
+  outline: none;
+}
+.window_form input[type=file] {
+  cursor: pointer;
+}
+.window_form button:not(.x-btn) {
+  color: var(--bg-special);
+  background-color: var(--font-special);
+  border: 0;
+  padding: 5px 20px;
+  font-size: 30px;
+  min-width: 50px;
+  min-height: 50px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.window_form .x-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+/*# sourceMappingURL=file-editor.css.map */

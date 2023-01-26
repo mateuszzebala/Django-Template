@@ -1,0 +1,24 @@
+{% load tags %}
+{% load static %}
+{% block navbar %}
+    <nav class="main navbar">
+        <a href="/Main/static" class="logo">
+            <img src="{% images 'main-logo.webp' %}" alt="Main logo">
+        </a>
+        <div class="links">
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <a href="#">Link</a>
+            <div class="dropdown">
+                <button class="main"><i class="fa-solid fa-earth-americas"></i><i class="fa-sharp fa-solid fa-caret-down"></i></button>
+                <div class="list">
+                    {% for language in languages %}
+                        <a href="{% url 'Pages:page' page_name=page.name language=language.name %}">{{ language.name|upper }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <button onclick="show_search()"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </nav>
+{% endblock %}

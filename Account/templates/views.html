@@ -1,0 +1,76 @@
+{% extends 'Panel/panel.html' %}
+{% load utils %}
+{% load static %}
+{% block head %}
+    <title>Views</title>
+    <link rel="stylesheet" href="{% static 'Account/css/views.css' %}">
+    {{ block.super }}
+{% endblock %}
+{% block main %}
+    <div class="views-list">
+
+        {% if not count %}
+            {% for view in views %}
+                <a href="{% url 'Panel:database-show' name='View' id=view.id %}">
+                    <div class="elem">
+                        <span>{{ view.url }}</span>
+                        <span>{{ view.datetime }}</span>
+                        <span>{{ view.method }}</span>
+                        <span>{{ view.id }}</span>
+                        <span>{{ view.ip_v4 }}</span>
+                    </div>
+                </a>
+            {% endfor %}
+        {% else %}
+            {% for view in views %}
+
+                <div class="elem">
+                    <span>{{ view.url }}</span>
+                    <span>{{ view.count }}</span>
+                </div>
+
+            {% endfor %}
+        {% endif %}
+        {% if not views %}
+            <p>No results</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block topbar %}
+    <div class="topbar-tools">
+        <form action="">
+            <label for="">
+                ORDER BY
+                <select name="order-by" id="">
+                    <option {% if order_by == 'datetime' %}selected{% endif %} value="datetime">Date time</option>
+                    <option {% if order_by == 'method' %}selected{% endif %} value="method">Http method</option>
+                    <option {% if order_by == 'ip_v4' %}selected{% endif %} value="ip_v4">IP</option>
+                    <option {% if order_by == 'url' %}selected{% endif %} value="url">URL</option>
+                </select>
+            </label>
+            <label for="asc">
+                ASC
+                <input type="checkbox" name="asc" id="asc" {% if asc == False %}{% else %}checked{% endif %}>
+            </label>
+            <label for="count">
+                GROUP
+                <input type="checkbox" id="count" name="count" {% if count %}checked{% endif %}>
+            </label>
+            <label for="from">
+                FROM
+                <input type="datetime-local" id="from" name="from" value="{{ datefrom }}">
+            </label>
+            <label for="to">
+                TO
+                <input type="datetime-local" id="to" name="to" value="{{ dateto }}">
+            </label>
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+{% endblock %}
+
+
+{% block path %}
+    <a href="{% url 'Account:views' %}">VIEWS</a>
+{% endblock %}

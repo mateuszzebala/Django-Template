@@ -1,0 +1,23 @@
+{% extends 'Panel/panel.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Forms</title>
+    <link rel="stylesheet" href="{% static 'Panel/css/forms.css' %}">
+    {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <div class="forms-list">
+        {% for form in forms %}
+            <a class="form" href="{% url 'Panel:forms-form' id=form.id %}">
+            <span>{{ form.name }}</span>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+{% block path %}
+    <a href="{% url 'Panel:forms' %}">FORMS</a>
+{% endblock %}

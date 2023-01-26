@@ -1,0 +1,29 @@
+{% extends 'Panel/panel.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Messages</title>
+    <link rel="stylesheet" href="{% static 'Panel/css/messages.css' %}">
+    {{ block.super }}
+{% endblock %}
+
+{% block main %}
+
+    <div class="message-content">
+    <h1> {{ message.email }}</h1>
+        <div>{{message.content}}</div>
+    </div>
+{% endblock %}
+
+{% block path %}
+    <a href="{% url 'Panel:messages' %}">MESSAGES</a>
+    <a href="{% url 'Panel:messages-read' id=message.id %}">{{ message.id }}</a>
+{% endblock %}
+
+{% block topbar %}
+    <div class="topbar-tools">
+        <a href="{% url 'Panel:database-edit' name='Message' id=message.id  %}">EDIT</a>
+        <a class="confirm-a" href="{% url 'Panel:messages-remove' id=message.id %}">REMOVE</a>
+        <a href="{% url 'Panel:messages-readed' id=message.id %}">READED: {{ message.readed }}</a>
+    </div>
+{% endblock %}

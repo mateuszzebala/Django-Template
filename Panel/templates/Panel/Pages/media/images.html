@@ -1,0 +1,32 @@
+{% extends 'Panel/Pages/media/main.html' %}
+{% load static %}
+
+
+{% block head %}
+    <title>Media - Images</title>
+    <link rel="stylesheet" href="{% static 'Panel/css/media.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="media-page">
+        <div class="tiles">
+         {% for img in images %}
+            <div class="image-tile">
+                <div class="image-box">
+                    <img src="{% url 'Main:images' path=img %}">
+                </div>
+                <span>{{ img }}</span>
+                <div class="tools">
+                    <button><a confirm="DELETE" href="#" class="confirm-a"><i class="fa-solid fa-trash"></i></a></button>
+                    <button><i class="fa-solid fa-pen"></i></button>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block path %}
+    {{ block.super }}
+    <a href="{% url 'Panel:media-images' %}">IMAGES</a>
+{% endblock %}

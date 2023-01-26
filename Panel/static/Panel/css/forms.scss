@@ -1,0 +1,173 @@
+.forms-list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .form {
+    background: rgba(0, 0, 0, 0.05);
+    border-left: 3px solid var(--font-color);
+    padding: 15px;
+    transition: 0.3s;
+    font-weight: 500;
+    color: var(--font-color);
+    cursor: pointer;
+
+    &:hover {
+      transform: translateX(15px);
+    }
+
+  }
+}
+
+.forms-page {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+  h1 {
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: flex-start;
+    position: relative;
+    text-align: left;
+    width: 500px;
+    z-index: 0;
+    align-items: flex-start;
+
+    p {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      label {
+        font-size: 20px;
+      }
+
+      input {
+        z-index: 0;
+        border: 0;
+        background-color: rgba(0, 0, 0, 0.05);
+        border-left: 3px solid var(--font-color);
+        color: var(--font-color);
+        border-radius: 0 5px 5px 0;
+        font-size: 23px;
+        padding: 8px 20px;
+        color: var(--font-color);
+        width: 400px;
+        box-sizing: border-box;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      select {
+        border: 0;
+        background-color: rgba(0, 0, 0, 0.05);
+        border-left: 3px solid var(--font-color);
+        color: var(--font-color);
+        border-radius: 0 5px 5px 0;
+        resize: none;
+        color: var(--font-color);
+        width: 400px;
+        overflow: auto;
+        box-sizing: border-box;
+        padding: 10px;
+        font-size: 17px;
+
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+
+        option {
+          background-color: transparent;
+          border: 3px;
+          padding: 2px 0;
+          text-align: center;
+
+          &:checked {
+            color: var(--font-special);
+            background-color: var(--bg-special);
+            border-left: 3px solid var(--font-special);
+            border-right: 3px solid var(--font-special);
+          }
+        }
+
+        &:focus {
+          outline: none;
+        }
+
+      }
+
+      a {
+
+        color: var(--font-color);
+        padding: 10px;
+        max-width: 250px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      input[type=checkbox] {
+        width: 40px;
+        min-width: 0px;
+        height: 40px;
+        cursor: pointer;
+        accent-color: var(--bg-special);
+
+      }
+
+      input[type=file]::file-selector-button {
+        display: none;
+      }
+
+      textarea {
+
+        color: var(--font-color);
+        border: 0;
+        background-color: rgba(0, 0, 0, 0.05);
+        border-left: 3px solid var(--font-color);
+        padding: 10px 20px;
+        border-radius: 0 5px 5px 0;
+        width: 400px;
+        box-sizing: border-box;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+    }
+
+    button[type=submit] {
+      border: 0;
+      font-size: 20px;
+      padding: 15px 30px;
+      color: var(--font-special);
+      border-radius: 5px;
+      background-color: var(--bg-special);
+      position: fixed;
+      right: 10px;
+      font-weight: bold;
+      bottom: 10px;
+      cursor: pointer;
+    }
+
+    .helptext {
+      font-size: 10px;
+    }
+
+    select {
+      min-width: 100px;
+    }
+  }
+}

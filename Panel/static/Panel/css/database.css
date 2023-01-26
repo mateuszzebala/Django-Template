@@ -1,0 +1,375 @@
+nav.models {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+  gap: 20px;
+  background-color: transparent;
+  overflow-x: auto;
+  box-shadow: 0 0 10px var(--bg-special);
+}
+nav.models a {
+  color: var(--font-special);
+  font-size: 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  padding: 10px;
+  transition: background-color 0.2s;
+}
+nav.models a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+nav.models::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+}
+
+.models_menu {
+  padding: 40px;
+}
+.models_menu h1 {
+  font-weight: bold;
+}
+
+.models_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+.models_grid a {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  white-space: nowrap;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  border-left: 3px solid var(--font-color);
+  color: var(--font-color);
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+  overflow: hidden;
+  border-radius: 0;
+  transition: 0.3s;
+}
+.models_grid a:hover {
+  transform: scale(1.1);
+}
+
+.db_table {
+  padding: 30px;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.db_table .toptools {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.db_table .toptools .number {
+  padding: 10px 30px;
+}
+.db_table .toptools a {
+  color: var(--font-special);
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  transition: 0.3s;
+  background-color: var(--bg-special);
+}
+.db_table .toptools a:hover {
+  transform: scale(1.1);
+}
+
+.model-tools-query {
+  padding: 0 30px;
+}
+
+.query {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  padding: 20px;
+}
+.query input {
+  border: 3px solid var(--bg-special);
+  color: var(--font-color);
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: transparent;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+.query input:focus {
+  outline: none;
+}
+.query .err {
+  display: none;
+}
+.query button {
+  border: 0;
+  color: var(--font-special);
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: var(--bg-special);
+}
+.query button:hover {
+  transform: scale(1.1);
+}
+.query a {
+  color: var(--font-color);
+}
+.query p {
+  white-space: nowrap;
+}
+
+.table-container {
+  width: 100%;
+  overflow: auto;
+  border-radius: 5px;
+}
+
+table.model {
+  border-collapse: collapse;
+  margin: auto;
+  width: 95%;
+  overflow: auto;
+  border-style: hidden;
+}
+table.model .delete_btn {
+  background-color: transparent;
+  color: var(--font-color);
+  font-size: 20px;
+  border: 0;
+  cursor: pointer;
+}
+table.model tr th {
+  border: 2px solid var(--bg-special);
+  padding: 10px;
+  color: var(--font-special);
+  background-color: var(--bg-special);
+  white-space: nowrap;
+  font-size: 20px;
+  text-align: center;
+}
+table.model tr th:nth-last-child(1) {
+  border-radius: 0 10px 0 0;
+}
+table.model tr th:nth-child(1) {
+  border-radius: 10px 0 0 0;
+}
+table.model tr td {
+  border: 2px solid var(--bg-special);
+  padding: 10px;
+  white-space: nowrap;
+  font-size: 20px;
+  text-align: center;
+}
+table.model tr td a {
+  color: var(--font-color);
+}
+table.model tr td.icon {
+  width: 40px;
+}
+
+.edit_model, .add_row {
+  padding: 40px;
+}
+.edit_model form, .add_row form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: flex-start;
+  position: relative;
+  text-align: left;
+  width: 500px;
+  z-index: 0;
+  align-items: flex-start;
+}
+.edit_model form p, .add_row form p {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.edit_model form p label, .add_row form p label {
+  font-size: 20px;
+}
+.edit_model form p input, .add_row form p input {
+  z-index: 0;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-left: 3px solid var(--font-color);
+  color: var(--font-color);
+  border-radius: 0 5px 5px 0;
+  font-size: 23px;
+  padding: 8px 20px;
+  width: 400px;
+  box-sizing: border-box;
+}
+.edit_model form p input:focus, .add_row form p input:focus {
+  outline: none;
+}
+.edit_model form p select, .add_row form p select {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-left: 3px solid var(--font-color);
+  color: var(--font-color);
+  border-radius: 0 5px 5px 0;
+  resize: none;
+  color: var(--font-color);
+  width: 400px;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 17px;
+}
+.edit_model form p select::-webkit-scrollbar, .add_row form p select::-webkit-scrollbar {
+  width: 0;
+}
+.edit_model form p select option, .add_row form p select option {
+  background-color: transparent;
+  border: 3px;
+  padding: 2px 0;
+  text-align: center;
+}
+.edit_model form p select option:checked, .add_row form p select option:checked {
+  color: var(--font-special);
+  background-color: var(--bg-special);
+  border-left: 3px solid var(--font-special);
+  border-right: 3px solid var(--font-special);
+}
+.edit_model form p select:focus, .add_row form p select:focus {
+  outline: none;
+}
+.edit_model form p a, .add_row form p a {
+  color: var(--font-color);
+  padding: 10px;
+  max-width: 250px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.edit_model form p input[type=checkbox], .add_row form p input[type=checkbox] {
+  width: 40px;
+  min-width: 0px;
+  height: 40px;
+  cursor: pointer;
+  accent-color: var(--bg-special);
+}
+.edit_model form p input[type=file]::file-selector-button, .add_row form p input[type=file]::file-selector-button {
+  display: none;
+}
+.edit_model form p textarea, .add_row form p textarea {
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-left: 3px solid var(--font-color);
+  color: var(--font-color);
+  padding: 10px 20px;
+  border-radius: 0 5px 5px 0;
+  width: 400px;
+  box-sizing: border-box;
+}
+.edit_model form p textarea:focus, .add_row form p textarea:focus {
+  outline: none;
+}
+.edit_model form button[type=submit], .add_row form button[type=submit] {
+  border: 0;
+  font-size: 20px;
+  padding: 15px 30px;
+  color: var(--font-special);
+  border-radius: 5px;
+  background-color: var(--bg-special);
+  position: fixed;
+  right: 10px;
+  font-weight: bold;
+  bottom: 10px;
+  cursor: pointer;
+}
+.edit_model form .helptext, .add_row form .helptext {
+  font-size: 10px;
+}
+.edit_model form select, .add_row form select {
+  min-width: 100px;
+}
+
+.model_delete {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  font-size: 30px;
+}
+.model_delete span {
+  font-size: 25px;
+  text-align: center;
+}
+.model_delete div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.model_delete div a {
+  padding: 20px 20px;
+  font-size: 20px;
+  background-color: var(--bg-special);
+  color: var(--font-special);
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.model_delete div a:hover {
+  transform: scale(1.2);
+}
+
+.show_model {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+}
+.show_model h1 {
+  font-size: 30px;
+  padding: 20px;
+  text-align: center;
+}
+.show_model .fieldname {
+  font-size: 15px;
+  padding: 10px 0;
+  display: inline-block;
+}
+.show_model .field {
+  padding: 10px;
+  background-color: transparent;
+  border-radius: 0;
+  min-height: 75px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0;
+  font-size: 20px;
+  transition: 0.3s;
+  color: var(--font-color);
+  border-left: 3px solid var(--font-color);
+}
+.show_model .field a {
+  font-size: 20px;
+  color: var(--font-special);
+  text-decoration: underline;
+}
+.show_model .field:hover {
+  transform: translateX(15px);
+}
+
+/*# sourceMappingURL=database.css.map */

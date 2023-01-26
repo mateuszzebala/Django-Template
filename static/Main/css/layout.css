@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+:root [contenteditable] {
+  outline: 3px solid #000;
+}
+:root .disable-click {
+  pointer-events: none;
+}
+
+.success {
+  background-color: #3adb76;
+}
+
+.alert {
+  background-color: #cc4b37;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  gap: 10px;
+  align-items: center;
+}/*# sourceMappingURL=layout.css.map */

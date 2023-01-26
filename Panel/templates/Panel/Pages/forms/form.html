@@ -1,0 +1,31 @@
+{% extends 'Panel/panel.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Forms - {{ form.name }}</title>
+    <link rel="stylesheet" href="{% static 'Panel/css/forms.css' %}">
+    {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <div class="forms-page">
+        <h1>{{ form.name|upper }}</h1>
+        <form class="form" action="" method="POST">
+            {% csrf_token %}
+            {{ form.form.as_p }}
+            <button type="submit">OK</button>
+            {% if last_form.errors %}
+                {% for field in last_form %}
+
+                    {% for error in field.errors %}
+                        {{ field.label }}: {{ error|escape }}
+                    {% endfor %}
+                {% endfor %}
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}
+{% block path %}
+    <a href="{% url 'Panel:forms' %}">FORMS</a>
+    <a href="{% url 'Panel:forms-form' id=form.id %}">{{ form.name }}</a>
+{% endblock %}

@@ -1,0 +1,119 @@
+main.user_editor {
+    padding: 20px 0 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 45%);
+
+    gap: 6%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        p {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+        section.fields {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+        .helptext {
+            display: none;
+        }
+        a {
+            color: var(--font-color);
+            padding: 10px;
+            max-width: 250px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        input[type="file"]::file-selector-button {
+            display: none;
+        }
+        ul {
+            display: none;
+        }
+
+        input, textarea {
+            font-size: 20px;
+
+            padding: 10px;
+            max-width: 400px;
+            min-width: 400px;
+            border:0;
+            background-color: rgba(0, 0, 0, 0.05);
+            border-left: 3px solid var(--font-color);
+        color: var(--font-color);
+            border-radius: 0 5px 5px 0;
+            margin: 5px 0;
+
+
+            &:focus {
+                outline: none;
+            }
+        }
+        label {
+            font-size: 23px;
+            padding: 10px;
+            font-weight: bold;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 3px;
+            border: 0;
+            font-weight: bold;
+            display: inline-block;
+            width: 140px;
+            text-align: center;
+            background-color: var(--bg-special);
+            color: var(--font-special);
+            transition: 0.3s;
+            cursor: pointer;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+.top-info {
+    background-color: transparent;
+    padding: 10px;
+    display: flex;
+    border-radius: 20px;
+    min-width: 1000px;
+    font-weight: 500;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: scroll;
+    color: var(--font-special);
+    div {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        align-items: center;
+        gap: 5px;
+    }
+    h1 {
+        font-size: 30px;
+    }
+    img {
+        width: 100px;
+        border-radius: 50%;
+    }
+    a {
+        color: var(--font-special);
+        font-size: 20px;
+        padding: 10px;
+    }
+}

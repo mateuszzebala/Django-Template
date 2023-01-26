@@ -1,0 +1,63 @@
+.messages-list {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.messages-list .message {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  overflow: auto;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-weight: bold;
+  gap: 20px;
+  border-left: 3px solid var(--font-color);
+  color: var(--font-color);
+}
+.messages-list .message::-webkit-scrollbar-track {
+  width: 0;
+}
+.messages-list .message:hover {
+  transform: scale(1.05);
+}
+@media (max-width: 650px) {
+  .messages-list .message {
+    flex-direction: column;
+  }
+}
+
+.topbar-tools {
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+}
+.topbar-tools a {
+  padding: 10px 20px;
+  color: var(--font-special);
+  transition: 0.3s;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.topbar-tools a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.message-content {
+  padding: 20px;
+  font-weight: bold;
+}
+.message-content h1 {
+  font-size: 20px;
+}
+.message-content div {
+  padding: 20px 0 0 0;
+}
+
+/*# sourceMappingURL=messages.css.map */

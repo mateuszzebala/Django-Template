@@ -1,0 +1,28 @@
+{% block admin_menu %}
+    <nav class="admin-menu top-bar">
+        <div class="row">
+            <div class="row">
+                <button type="submit" class="edit-page-submit is-primary button is-success">
+                    <i class="fa-regular fa-floppy-disk"></i>
+                </button>
+                <div class="field">
+                  <input id="edit-page-switch" type="checkbox" name="switchRoundedOutlinedSuccess" class="switch is-rounded is-medium is-success">
+                  <label for="edit-page-switch"></label>
+                </div>
+            </div>
+            <div class="row">
+                <a href="{% url 'admin:index' %}" target="_blank">ADMIN</a>
+                <a href="{% url 'Panel:home' %}" target="_blank">PANEL</a>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="user">
+                <img src="{% url 'Account:image' id=request.user.id %}" alt="User image">
+                <a href="{% url 'Panel:users-user' id=request.user.id %}">
+                    {{ request.user.username }}
+                </a>
+            </div>
+        </div>
+    </nav>
+{% endblock %}

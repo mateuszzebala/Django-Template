@@ -1,0 +1,47 @@
+.admin-menu {
+  background-color: #222;
+  display: flex;
+  z-index: 20;
+  justify-content: space-between;
+  padding: 10px;
+}
+.admin-menu span, .admin-menu a, .admin-menu p {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+.admin-menu a {
+  font-weight: bold;
+}
+.admin-menu .switch, .admin-menu button {
+  margin: 0;
+}
+.admin-menu .switch input:checked + .slider {
+  background-color: #3adb76 !important;
+}
+.admin-menu button.edit-page-submit {
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 0;
+}
+.admin-menu .user {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+.admin-menu .user img {
+  width: 30px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+
+@media (max-width: 475px) {
+  .admin-menu .user {
+    display: none;
+  }
+}/*# sourceMappingURL=admin_menu.css.map */

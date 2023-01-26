@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+$admin-menu-bg: #222;
+$admin-menu-font: #fff;
+
+$success-color: #3adb76;
+$alert-color: #cc4b37;
+$primary-color: #1779ba;
+$secondary-color: #767676;
+$warning-color: #ffae00;
+$font-family: 'Roboto', sans-serif;
+
+:root {
+    padding: 0;
+    margin: 0;
+    [contenteditable] {
+        outline: 3px solid #000;
+    }
+
+    .disable-click {
+        pointer-events: none;
+    }
+    font-family: $font-family;
+    a, button, select, input, textarea, option{
+        font-family: $font-family;
+    }
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding: 0 10px;
+    gap: 10px;
+    align-items: center;
+}

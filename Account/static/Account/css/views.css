@@ -1,0 +1,92 @@
+.views-list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.views-list .elem {
+  background: rgba(0, 0, 0, 0.05);
+  border-left: 3px solid var(--font-color);
+  padding: 15px;
+  transition: 0.3s;
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  font-weight: 500;
+  gap: 20px;
+  color: var(--font-color);
+  cursor: pointer;
+}
+.views-list .elem span {
+  padding: 0 10px;
+}
+.views-list .elem:hover {
+  transform: translateX(15px);
+}
+
+.topbar-tools {
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  color: var(--font-special);
+}
+.topbar-tools a {
+  padding: 10px 15px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--font-special);
+  justify-content: center;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.topbar-tools div {
+  display: flex;
+  gap: 10px;
+}
+.topbar-tools form {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  color: var(--font-special);
+  font-weight: bold;
+}
+.topbar-tools form input, .topbar-tools form select {
+  border: 0;
+  color: var(--font-special);
+  border-left: 3px solid var(--font-special);
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.05);
+}
+.topbar-tools form input:focus, .topbar-tools form select:focus {
+  outline: none;
+}
+.topbar-tools form input option, .topbar-tools form select option {
+  background: var(--bg-special);
+}
+.topbar-tools form input::-webkit-calendar-picker-indicator {
+  background: white;
+  border-radius: 50%;
+}
+.topbar-tools form input[type=checkbox] {
+  height: 20px;
+  width: 20px;
+}
+.topbar-tools form label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.topbar-tools form button {
+  background: transparent;
+  border: 0;
+  color: var(--font-special);
+}
+
+/*# sourceMappingURL=views.css.map */

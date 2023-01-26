@@ -1,0 +1,58 @@
+
+.python-run{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    textarea{
+        background-color: transparent;
+        color: var(--font-color);
+        resize: none;
+        padding:10px;
+        font-size: 20px;
+        box-sizing: border-box;
+        border: 0;
+        border-left: 3px solid var(--font-color);
+        font-weight: bold;
+        width: 100%;
+        height: 100%;
+        &:focus{
+            outline: none;
+        }
+    }
+    button{
+        background-color: var(--bg-special);
+        color: var(--font-special);
+        border: 0;
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        position: absolute;
+        right: 30px;
+        cursor: pointer;
+        bottom: 30px;
+    }
+
+}
+
+.python-server{
+    padding: 30px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    gap: 20px;
+    .python-console{
+        background-color: var(--bg-special);
+        padding: 20px;
+        min-height: 130px;
+        width: 100%;
+        margin: auto;
+        left: 0;
+        right: 0;
+        overflow: auto;
+        border-radius: 5px;
+    }
+}

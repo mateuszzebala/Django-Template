@@ -1,0 +1,17 @@
+{% load tags %}
+
+{% block footer %}
+<footer>
+    <p>
+        {% text "E-mail: kontakt@lemox.pl" c %}<br> {% text "Tel: 662 961 751" c %}
+    </p>
+    <p>{% text "Copyright © 2022, lemox.pl" c %}</p>
+    <p><a class="privacy" href="{% url 'Main:page' name='privacy' lang=c.lang %}">{% text "Polityka Prywatności" c %}</a></p>
+    <p>
+        <a style="--hover-color: #00ACEE" target="_blank" href="https://twitter.com/Lemoxpl"><i class="fa-brands fa-twitter"></i></a>
+        <a style="--hover-color: #EE1D52" target="_blank" href="https://www.tiktok.com/@lemox.pl"><i class="fa-brands fa-tiktok"></i></a>
+        <a style="--hover-color: #3B5998" target="_blank" href="https://www.facebook.com/people/Lemox-PL/100086361407998"><i class="fa-brands fa-facebook"></i></a>
+        <a style="--hover-color: #DD2A7B" target="_blank" href="https://www.instagram.com/lemoxpl/"><i class="fa-brands fa-instagram"></i></a>
+    </p>
+</footer>
+{% endblock %}

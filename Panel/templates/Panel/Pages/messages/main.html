@@ -1,0 +1,31 @@
+{% extends 'Panel/panel.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Messages</title>
+    <link rel="stylesheet" href="{% static 'Panel/css/messages.css' %}">
+    {{ block.super }}
+{% endblock %}
+
+{% block main %}
+    <div class="messages-list">
+        {% for message in messages %}
+            <a href="{% url 'Panel:messages-read' id=message.id %}" class="message">
+                <span>{{ message.email }}</span>
+                <span>{{ message.datetime|date:"l d M, f"}}</span>
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block path %}
+    <a href="{% url 'Panel:messages' %}">MESSAGES</a>
+{% endblock %}
+
+{% block topbar %}
+    <div class="topbar-tools">
+        <a href="?readed=all">ALL</a>
+        <a href="?readed=true">READED</a>
+        <a href="?readed=false">UNREADED</a>
+    </div>
+{% endblock %}

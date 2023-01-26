@@ -1,0 +1,77 @@
+.users {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  padding: 30px;
+  gap: 20px;
+}
+.users a:focus {
+  outline: none;
+}
+.users a:focus .user-tile {
+  box-shadow: 0 0 20px var(--bg-special);
+}
+.users .user-tile {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 0 10px 10px 0;
+  border-left: 3px solid var(--font-color);
+  color: var(--font-color);
+  padding: 15px;
+  display: flex;
+  transition: 0.3s;
+  align-items: center;
+  justify-content: space-between;
+}
+.users .user-tile div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.users .user-tile img {
+  width: 40px;
+  border-radius: 50%;
+}
+.users .user-tile:hover {
+  transform: scale(1.05);
+}
+
+.form-search {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.form-search input {
+  background: transparent;
+  color: var(--font-special);
+  border: 3px solid var(--font-special);
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 0;
+}
+.form-search input:focus {
+  outline: none;
+}
+.form-search button {
+  background: var(--font-special);
+  color: var(--bg-special);
+  border: 0;
+  padding: 15px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.form-search a {
+  background: transparent;
+  color: var(--font-special);
+  border: 0;
+  margin: 0;
+  font-size: 20px;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=users.css.map */

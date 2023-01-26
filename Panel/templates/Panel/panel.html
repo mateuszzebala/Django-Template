@@ -1,0 +1,67 @@
+{% extends 'Panel/layout.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+    <aside class="left-panel">
+
+        <div>
+            <button class="toggle-left-panel"><header><i class="fa-solid fa-bars"></i></header></button>
+            <section>
+                <a href="{% url 'Panel:home' %}"><i class="fa-solid fa-house"></i> <span>HOME</span></a>
+                <a href="{% url 'Panel:messages' %}"><i class="fa-solid fa-message"></i> <span>MESSAGES</span></a>
+                <a href="{% url 'Panel:database' %}"><i class="fa-solid fa-database"></i> <span>DATABASE</span></a>
+                <a href="{% url 'Panel:users' %}"><i class="fa-solid fa-users"></i> <span>USERS</span></a>
+                <a href="{% url 'Panel:pages' %}"><i class="fa-solid fa-sitemap"></i> <span>PAGES</span></a>
+                <a href="{% url 'Panel:media' %}"><i class="fa-solid fa-photo-film"></i> <span>MEDIA</span></a>
+                <a href="{% url 'Panel:forms' %}"><i class="fa-solid fa-pen-nib"></i> <span>FORMS</span></a>
+                <a href="{% url 'Panel:commands' %}"><i class="fa-solid fa-server"></i> <span>COMMANDS</span></a>
+                <a href="{% url 'Panel:python' %}"><i class="fa-brands fa-python"></i> <span>PYTHON</span></a>
+                <a href="{% url 'Panel:terminal' %}"><i class="fa-solid fa-terminal"></i> <span>TERMINAL</span></a>
+                <a href="{% url 'Panel:editor' %}"><i class="fa-solid fa-code"></i> <span>FILES</span></a>
+                <a href="{% url 'Panel:charts' %}"><i class="fa-solid fa-chart-pie"></i> <span>CHARTS</span></a>
+                <a href="{% url 'Panel:languages' %}"><i class="fa-solid fa-globe"></i> <span>LANGUAGE</span></a>
+                {% for page in registered_pages %}
+                    <a href="{% url page.url %}">{{ page.icon|safe }} <span>{{ page.name|upper }}</span></a>
+                {% endfor %}
+                <a href="{% url 'Panel:settings' %}"><i class="fa-solid fa-gear"></i> <span>SETTINGS</span></a>
+            </section>
+        </div>
+        <footer>
+            <button class="change-theme"><i class="fa-solid fa-brush"></i> </button>
+        </footer>
+    </aside>
+    <section class="content">
+         <nav class="top-panel">
+
+            <section class="path">
+                <button class="burger"><i class="fa-solid fa-bars"></i></button>
+                <div class="pth">
+                    {% block path %}
+                        {% for text, link in path.items %}
+                            <a href="{{ link }}">{{ text }}</a>
+                        {% endfor %}
+                    {% endblock %}
+                </div>
+            </section>
+            <section class="menu">
+                <a class="link" href="{% url 'Panel:messages' %}?readed=false"><i class="fa-solid fa-message"></i> {{messages_length}}</a>
+                <a href="{% url 'Panel:users-user' id=request.user.id %}" class="user-a">
+                    <span>{{ request.user.username }}</span>
+                    <img height="40" src="{% url 'Account:image' id=request.user.id %}" alt="account-image">
+                </a>
+            </section>
+        </nav>
+        <div class="topbar">
+            {% block topbar %}{% endblock %}
+        </div>
+        <main>
+            <button class="topbar_toggle"><i class="fa-solid fa-circle-up"></i></button>
+            {% block main %}{% endblock %}
+        </main>
+    </section>
+    <div style="clear: both"></div>
+{% endblock %}

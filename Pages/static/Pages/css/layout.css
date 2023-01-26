@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+:root {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+:root [contenteditable] {
+  outline: 3px solid #000;
+}
+:root .disable-click {
+  pointer-events: none;
+}
+:root a, :root button, :root select, :root input, :root textarea, :root option {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+  gap: 10px;
+  align-items: center;
+}
+
+/*# sourceMappingURL=layout.css.map */

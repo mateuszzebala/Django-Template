@@ -1,0 +1,93 @@
+.commands{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    gap: 10px;
+
+    .row{
+        display: flex;
+        gap: 20px;
+        max-width: 850px;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 20px;
+        border-left: 3px var(--font-color) solid;
+        flex-direction: row;
+        border-radius: 0 5px 5px 0;
+        color: var(--font-color);
+        background-color: rgba(0, 0, 0, 0.05);
+
+        padding: 20px;
+        span{
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow:ellipsis;
+        }
+        a{
+            color: var(--font-color);
+        }
+        div{
+            display: flex;
+            justify-content: space-around;
+            gap:20px;
+        }
+
+    }
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 5px 20px;
+
+}
+
+.topbar-menu{
+    display: flex;
+    gap: 5px;
+    padding: 20px;
+
+    box-sizing: border-box;
+    a{
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        color: var(--font-special);
+        border-radius: 4px;
+        font-weight: 500;
+    }
+}
+
+.add_command{
+        padding: 10px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 10px;
+        input{
+            border: 3px solid var(--font-color);
+            padding: 10px 10px;
+            font-weight: bold;
+            background-color: transparent;
+            color: var(--font-color);
+            font-size: 20px;
+                      border-radius: 5px;
+            text-align: center;
+            &:focus{
+                outline: none;
+            }
+        }
+        button{
+            background-color: var(--font-color);
+            color: var(--bg-color);
+            border: 0;
+            font-size: 20px;
+            padding: 12px 30px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    }

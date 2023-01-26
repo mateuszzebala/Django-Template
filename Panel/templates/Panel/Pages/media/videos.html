@@ -1,0 +1,33 @@
+{% extends 'Panel/Pages/media/main.html' %}
+{% load static %}
+
+
+{% block head %}
+    <title>Media - Videos</title>
+    <link rel="stylesheet" href="{% static 'Panel/css/media.css' %}">
+{% endblock %}
+
+{% block main %}
+    <div class="media-page">
+        <div class="tiles">
+         {% for vid in videos %}
+            <div class="video-tile">
+                <div class="video-box">
+                    <video src="{% url 'Main:videos' path=vid %}"></video>
+                </div>
+                <span>{{ vid }}</span>
+                <div class="tools">
+                    <button><i class="fa-solid fa-trash"></i></button>
+                    <button><i class="fa-solid fa-pen"></i></button>
+
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block path %}
+    {{ block.super }}
+    <a href="{% url 'Panel:media-videos' %}">VIDEOS</a>
+{% endblock %}

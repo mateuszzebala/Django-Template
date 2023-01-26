@@ -1,0 +1,72 @@
+nav.main.navbar {
+  color: #3d3c3c;
+  padding: 20px calc((100vw - 300px) / 10);
+  align-items: center;
+  display: flex;
+  background: #f3f0f0;
+  z-index: 20;
+  justify-content: space-between;
+}
+nav.main.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+nav.main.navbar .logo img {
+  height: 30px;
+}
+nav.main.navbar .links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+nav.main.navbar .links a, nav.main.navbar .links button {
+  color: #3d3c3c;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 0;
+  background: #f3f0f0;
+  border: 0;
+  transition: 0.3s;
+  padding: 0;
+  cursor: pointer;
+}
+nav.main.navbar .links a:hover, nav.main.navbar .links button:hover {
+  color: #f55e0d;
+}
+nav.main.navbar .links .dropdown {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  cursor: pointer;
+}
+nav.main.navbar .links .dropdown .main {
+  display: flex;
+  gap: 10px;
+}
+nav.main.navbar .links .dropdown .main .fa-caret-down {
+  transition: 0.2s;
+}
+nav.main.navbar .links .dropdown:hover .list, nav.main.navbar .links .dropdown:focus .list {
+  max-height: 100px;
+}
+nav.main.navbar .links .dropdown:hover .fa-caret-down, nav.main.navbar .links .dropdown:focus .fa-caret-down {
+  transform: rotate(180deg);
+}
+nav.main.navbar .links .dropdown .list {
+  overflow: hidden;
+  z-index: 21;
+  display: flex;
+  transition: max-height 0.3s;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  background: #f3f0f0;
+  transform: translate(-30px, 30px);
+  max-height: 0;
+}
+nav.main.navbar .links .dropdown .list a {
+  padding: 5px 30px;
+}
+
+/*# sourceMappingURL=navbar.css.map */
